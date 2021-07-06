@@ -6,14 +6,19 @@ local function calculate(self, ...)
         for i, v in next, numbers do
             result = result + v 
         end
-    elseif self == "minus" then
-        local base = numbers[1]
+    elseif self == "subtract" then
+        result = numbers[1]
         table.remove(numbers, 1)
         
         for i, v in next, numbers do
-            base = base - v
-            
-            result = base
+            result = result - v
+        end
+    elseif self == "multiply" then
+        result = numbers[1]
+        table.remove(numbers, 1)
+        
+        for i, v in next, numbers do
+            result = result * v 
         end
     end
     
