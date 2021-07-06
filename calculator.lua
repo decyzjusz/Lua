@@ -20,6 +20,13 @@ local function calculate(self, ...)
         for i, v in next, numbers do
             result = result * v 
         end
+    elseif self == "divide" then
+        result = numbers[1]
+        table.remove(numbers, 1)
+        
+        for i, v in next, numbers do
+            result = result / v 
+        end
     end
     
     return result
